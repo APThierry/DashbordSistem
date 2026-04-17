@@ -1,0 +1,12 @@
+// src/components/charts/index.ts
+export { ReactECharts } from './ChartWrapper'
+export { VendasMensalChart } from './VendasMensalChart'
+export { ComposicaoCobrancaChart } from './ComposicaoCobrancaChart'
+export { ComparativoYoYChart } from './ComparativoYoYChart'
+export { SSSChart } from './SSSChart'
+export { OcupacaoChart } from './OcupacaoChart'
+export { ABLClassificacaoChart } from './ABLClassificacaoChart'
+export { EncargosEvolucaoChart } from './EncargosEvolucaoChart'
+export { EncargosBreakdownChart } from './EncargosBreakdownChart'
+export { SegmentosChart } from './SegmentosChart'
+export { EncargosM2Chart } from './EncargosM2Chart'

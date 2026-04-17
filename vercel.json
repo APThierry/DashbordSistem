@@ -1,0 +1,28 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/ingest",
+      "schedule": "0 6 1 * *"
+    }
+  ],
+  "functions": {
+    "app/api/cron/ingest/route.ts": {
+      "maxDuration": 300
+    },
+    "app/api/ingest/trigger/route.ts": {
+      "maxDuration": 300
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "AZURE_TENANT_ID": "@azure_tenant_id",
+    "AZURE_CLIENT_ID": "@azure_client_id",
+    "AZURE_CLIENT_SECRET": "@azure_client_secret",
+    "SHAREPOINT_SITE_ID": "@sharepoint_site_id",
+    "SHAREPOINT_FOLDER_PATH": "/SISTEMA",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "CRON_SECRET": "@cron_secret"
+  }
+}
