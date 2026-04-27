@@ -1,12 +1,19 @@
 // src/lib/supabase/client.ts
 import { createBrowserClient } from '@supabase/ssr'
 
+const supabaseUrl = process.env.NEXT_PUBLIC_DB_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_DB_ANON_KEY
+
 export function createClient() {
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error(
+      `Supabase client: variáveis de ambiente faltando.\n` +
+      `NEXT_PUBLIC_DB_URL: ${supabaseUrl ? '✅' : '❌ MISSING'}\n` +
+      `NEXT_PUBLIC_DB_ANON_KEY: ${supabaseAnonKey ? '✅' : '❌ MISSING'}`
+    )
+  }
+
+  return createBrowserClient(supabaseUrl, supabaseAnonKey)
 }
 
-// Exportar também como default para compatibilidade
 export default createClient
